@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="generalcoredemo.com.cloverstudio.generalcoredemo">
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
+    <application
+        android:name=".AppContext"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        /*侧滑关闭页面demo*/
+        <activity
+            android:name=".PageTwoActivity"
+            android:theme="@style/MyMaterialThemeSlidr">
+            <intent-filter>
+                <action android:name="com.cloverstudio.generalcoredemo.action.pageTwoActivity"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        /*网络图片加载demo*/
+        <activity
+            android:name=".NetImageLoadActivity"
+            android:theme="@style/MyMaterialThemeSlidr">
+            <intent-filter>
+                <action android:name="com.cloverstudio.generalcoredemo.action.netImageLoadActivity"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        /*网络gif图片加载demo*/
+        <activity
+            android:name=".NetGifImageLoadActivity"
+            android:theme="@style/MyMaterialThemeSlidr">
+            <intent-filter>
+                <action android:name="com.cloverstudio.generalcoredemo.action.netGifImageLoadActivity"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        /*网络请求操作演示*/
+        <activity
+            android:name=".HttpOperateActivity"
+            android:theme="@style/MyMaterialThemeSlidr">
+            <intent-filter>
+                <action android:name="com.cloverstudio.generalcoredemo.action.httpOperateActivity"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        /*自定义导航栏演示*/
+        <activity
+            android:name=".CustomNavBarActivity"
+            android:theme="@style/MyMaterialThemeSlidr">
+            <intent-filter>
+                <action android:name="com.cloverstudio.generalcoredemo.action.customNavBarActivity"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

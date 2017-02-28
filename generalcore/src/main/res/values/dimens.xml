@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--导航栏相关的参数-->
+    <dimen name="navbar_height">46dp</dimen>
+    <dimen name="useravatar_image_width">27dp</dimen>
+    <dimen name="useravatar_image_height">27dp</dimen>
+    <dimen name="useravatar_image_small_width">22dp</dimen>
+    <dimen name="useravatar_image_small_height">22dp</dimen>
+    <dimen name="backimg_image_width">25dp</dimen>
+    <dimen name="backimg_image_height">25dp</dimen>
+    <dimen name="navbar_backbtn_width">30dp</dimen>
+    <dimen name="navbar_backbtn_height">30dp</dimen>
+    <dimen name="mainpage_navbar_height">35dp</dimen>
+    <dimen name="mainpage_navimagetitle_img_w">36dp</dimen>
+    <dimen name="mainpage_navimagetitle_img_h">20dp</dimen>
+    <dimen name="mainpage_rightbtnimg_h">20dp</dimen>
+    <dimen name="mainpage_rightbtnimg_w">20dp</dimen>
+    <!-- toast -->
+    <dimen name="view_toast_min_height">45dp</dimen>
+    <dimen name="view_toast_min_width">50dp</dimen>
+    <dimen name="view_toast_info_textsize">13sp</dimen>
+
+</resources>

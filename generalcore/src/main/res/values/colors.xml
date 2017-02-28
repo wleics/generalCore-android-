@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#C8282F</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF80AB</color>
+    <color name="nav_textcolor_gray">#414141</color>
+    <!-- 透明主题背景下的navbar的背景颜色 -->
+    <color name="transparent_theme_navbar_bg">#00000000</color>
+    <!--自定义导航栏背景色-->
+    <color name="custom_navbar_bgcolor">#89C541</color>
+    <color name="custom_navbar_title_textcolor">#018FD9</color>
+</resources>

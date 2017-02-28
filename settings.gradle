@@ -1,0 +1,2 @@
+//include ':app', ':generalcore'
+include ':app', ':generalcore'

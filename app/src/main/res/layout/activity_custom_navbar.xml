@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/buttonChangeNavBarBgColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="修改导航栏背景色"/>
+
+            <Button
+                android:id="@+id/buttonChangeNavBarTitleColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="修改导航栏字体颜色"/>
+
+            <Button
+                android:id="@+id/buttonChangeLeftBtnImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义左侧按钮1"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="该自定义按钮的为加载网络图片，一般可用于显示用户头像"
+                android:textColor="@android:color/holo_red_dark"/>
+
+            <Button
+                android:id="@+id/buttonChangeLeftBtnImage2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义左侧按钮2"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="该自定义按钮为仅替换左侧按钮的图片，可用于自定义返回按钮图标"
+                android:textColor="@android:color/holo_red_dark"/>
+
+            <Button
+                android:text="自定义导航栏标题视图"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonChangeNavbarTitleByImage"/>
+
+            <TextView
+                android:text="该自定义为，将导航栏的标题用图片代替"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5"
+                android:textColor="@android:color/holo_red_dark"/>
+
+            <Button
+                android:text="显示右侧按钮（文字）"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonShowRightLabelItem"/>
+
+            <Button
+                android:text="显示右侧按钮（图片）"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonShowRightLabelItemByImg"/>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
