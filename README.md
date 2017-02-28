@@ -2,7 +2,7 @@
 ##支持compile操作
 具体步骤
 
-1. 在应用的主bulid.gradle（Project）中加入**maven {url "https://jitpack.io"}**
+* 在应用的主bulid.gradle（Project）中加入**maven {url "https://jitpack.io"}**
 
 ```
 allprojects {
@@ -13,7 +13,7 @@ allprojects {
 }
 ```
 
-2. 在需要引入类库的app中加入如下代码:**compile 'com.github.wleics:generalCore-android-:v1.0'**
+* 在需要引入类库的app中加入如下代码:**compile 'com.github.wleics:generalCore-android-:v1.0'**
 
 ```
 dependencies {
