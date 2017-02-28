@@ -57,30 +57,28 @@ import java.util.regex.Pattern;
  * @author wlei
  */
 public class SystemTools {
-    /**
-     * 系统包名,需要设置为引入的主项目的app包名
-     */
-    static final String SYSTEM_PACKAGE = "";
-
-    // TODO: 16/7/27 当进行版本发布时，需要将LOG_DATA设置为false
-    /**
-     * 是否打印出日志
-     */
-    static final boolean LOG_DATA = false;
 
     /**
      * 获取系统当前版本信息
      *
-     * @param context
+     * @param context     上下文
+     * @param appPackname 应用对应的包名
      */
-    public static PackageInfo getSystemVersion(Context context) throws Exception{
-        if (SYSTEM_PACKAGE.equals("")) {
+    public static PackageInfo getSystemVersion(Context context,
+                                               String appPackname) throws Exception {
+        if (context == null) {
+            throw new Exception("context 不能为 null");
+        }
+        if (appPackname == null) {
+            throw new Exception("appPackname 不能为 null");
+        }
+        if (appPackname.equals("")) {
             throw new Exception("SYSTEM_PACKAGE为空！");
         }
         PackageInfo packageInfo = null;
         PackageManager pm = context.getPackageManager();
         try {
-            PackageInfo info = pm.getPackageInfo(SYSTEM_PACKAGE, 0);
+            PackageInfo info = pm.getPackageInfo(appPackname, 0);
             if (info != null) {
                 packageInfo = info;
             }
@@ -634,7 +632,7 @@ public class SystemTools {
      */
     @SuppressWarnings("unused")
     public static void Log(String msg) {
-        if (msg == null || !LOG_DATA) {
+        if (msg == null || !SystemToolsHelper.isLogData()) {
             return;
         }
         LogM.showLog(msg);
@@ -649,13 +647,12 @@ public class SystemTools {
      */
     @SuppressWarnings("unused")
     public static void Log(Object object, String msg) {
-        if (object == null || !LOG_DATA) {
+        if (object == null || !SystemToolsHelper.isLogData()) {
             Log(msg);
             return;
         }
         LogM.showLog(object.toString() + " " + msg);
     }
-
 
 
     /**

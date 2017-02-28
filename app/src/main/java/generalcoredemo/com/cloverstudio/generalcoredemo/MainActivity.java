@@ -1,7 +1,9 @@
 package generalcoredemo.com.cloverstudio.generalcoredemo;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.view.View;
+import android.widget.TextView;
 
 import com.cloverstudio.generalcore.ui.activity.BaseNavActivity;
 import com.cloverstudio.generalcore.ui.view.NavigationBar;
@@ -22,7 +24,7 @@ public class MainActivity extends BaseNavActivity {
 
     @Override
     public void setup() {
-
+        SystemTools.Log("主页setup");
         //侧滑关闭页面演示
         initBtnForOpenNewActivity(
                 R.id.btnShowOpenPageTwoActivity,
@@ -48,6 +50,19 @@ public class MainActivity extends BaseNavActivity {
                 R.id.btnShowHttpOperateActivity,
                 "com.cloverstudio.generalcoredemo.action.httpOperateActivity"
         );
+        //获取应用的版本信息
+        try {
+            PackageInfo packageInfo = SystemTools
+                    .getSystemVersion(MainActivity.this, "generalcoredemo.com.cloverstudio.generalcoredemo");
+            if (packageInfo!=null){
+                TextView title = (TextView) findViewById(R.id.title);
+                int versionCode = packageInfo.versionCode;
+                String versionName = packageInfo.versionName;
+                title.setText(title.getText().toString() + ":" + versionCode + "_" + versionName);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

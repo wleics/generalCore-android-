@@ -7,7 +7,6 @@ package com.cloverstudio.generalcore.utils;
  */
 public class LogM {
     private static boolean flag = true;
-    private static String TAG = "com.cloverstudio.generalcore";
 
     public static void show(String tag, String msg) {
         if (flag) {
@@ -18,7 +17,7 @@ public class LogM {
     /*打印日志*/
     public static void showLog(String msg) {
         if (msg != null) {
-            show(TAG, msg);
+            show(SystemToolsHelper.getLogTag(), msg);
         }
     }
 }
