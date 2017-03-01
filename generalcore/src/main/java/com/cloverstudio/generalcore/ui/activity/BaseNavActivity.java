@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.cloverstudio.generalcore.R;
+import com.cloverstudio.generalcore.http.images.ImageLoader;
 import com.cloverstudio.generalcore.ui.view.NavigationBar;
 import com.cloverstudio.generalcore.utils.NavigationBarHelper;
 import com.cloverstudio.generalcore.utils.SlidrHelper;
@@ -51,6 +52,16 @@ public abstract class BaseNavActivity extends FragmentActivity {
 
         //进行具体实现页面的相关设置
         setup();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        try {
+            ImageLoader.cancelImageLoadByTag(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**

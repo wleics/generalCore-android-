@@ -10,7 +10,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:src="@drawable/timg">
+        android:src="@drawable/placeholder">
 
     </pl.droidsonroids.gif.GifImageView>
 

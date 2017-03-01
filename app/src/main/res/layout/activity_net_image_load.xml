@@ -11,7 +11,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        fresco:placeholderImage="@drawable/timg"
+        fresco:placeholderImage="@drawable/placeholder"
         fresco:placeholderImageScaleType="fitXY"/>
 
     <Button

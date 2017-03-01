@@ -66,6 +66,15 @@
                 <category android:name="android.intent.category.DEFAULT"></category>
             </intent-filter>
         </activity>
+        /*使用picasso加载网络图片*/
+        <activity
+            android:name=".NetImageLoadByPicassoActivity"
+            android:theme="@style/MyMaterialThemeSlidr">
+            <intent-filter>
+                <action android:name="com.cloverstudio.generalcoredemo.action.netImageLoadByPicassoActivity"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

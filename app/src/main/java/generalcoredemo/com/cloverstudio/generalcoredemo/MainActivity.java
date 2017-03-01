@@ -50,11 +50,17 @@ public class MainActivity extends BaseNavActivity {
                 R.id.btnShowHttpOperateActivity,
                 "com.cloverstudio.generalcoredemo.action.httpOperateActivity"
         );
+        //使用picasso加载图片
+        initBtnForOpenNewActivity(
+                R.id.btnShowNetImageLoad2Activity,
+                "com.cloverstudio.generalcoredemo.action.netImageLoadByPicassoActivity"
+        );
         //获取应用的版本信息
         try {
             PackageInfo packageInfo = SystemTools
-                    .getSystemVersion(MainActivity.this, "generalcoredemo.com.cloverstudio.generalcoredemo");
-            if (packageInfo!=null){
+                    .getSystemVersion(
+                            MainActivity.this, "generalcoredemo.com.cloverstudio.generalcoredemo");
+            if (packageInfo != null) {
                 TextView title = (TextView) findViewById(R.id.title);
                 int versionCode = packageInfo.versionCode;
                 String versionName = packageInfo.versionName;

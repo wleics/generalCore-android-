@@ -16,6 +16,10 @@ public class AppContext extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        //对系统帮助类进行设置
+        SystemToolsHelper.setLogTag("generalCoreDemo");
+        //应用发布时，使用此选项关闭日志打印
+        //        SystemToolsHelper.disableLogData();
         //初始化应用的文件系统
         AppFileSystem.initFileSystem("generalCoreDemo");
         //初始化网络图片加载器
@@ -23,9 +27,7 @@ public class AppContext extends Application {
         //设置导航栏的默认背景颜色
         NavigationBarHelper
                 .setNavigationBarDefBackgroundColor(this, R.color.navigationBar_defcolor);
-        //对系统帮助类进行设置
-        SystemToolsHelper.setLogTag("generalCoreDemo");
-        //应用发布时，使用此选项关闭日志打印
-//        SystemToolsHelper.disableLogData();
+
+
     }
 }

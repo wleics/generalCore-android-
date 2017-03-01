@@ -33,7 +33,13 @@
         android:id="@+id/btnShowNetImageLoadActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="网络图片加载"/>
+        android:text="网络图片加载(使用fresco)"/>
+
+    <Button
+        android:text="网络图片加载(使用picasso)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnShowNetImageLoad2Activity"/>
 
     <Button
         android:id="@+id/btnShowNetGifImageLoadActivity"
