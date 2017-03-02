@@ -36,10 +36,10 @@
         android:text="网络图片加载(使用fresco)"/>
 
     <Button
-        android:text="网络图片加载(使用picasso)"
+        android:id="@+id/btnShowNetImageLoad2Activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnShowNetImageLoad2Activity"/>
+        android:text="网络图片加载(使用picasso)"/>
 
     <Button
         android:id="@+id/btnShowNetGifImageLoadActivity"
@@ -62,4 +62,17 @@
         android:layout_height="wrap_content"
         android:text="网络请求操作"/>
 
+    <Button
+        android:text="清理图片缓存"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnClearImageCache"/>
+
+    <TextView
+        android:id="@+id/cacheFolderSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|right"
+        android:text="@string/app_name"
+        android:textColor="@android:color/black"/>
 </LinearLayout>

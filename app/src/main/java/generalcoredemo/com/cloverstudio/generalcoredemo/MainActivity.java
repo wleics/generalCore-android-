@@ -2,9 +2,11 @@ package generalcoredemo.com.cloverstudio.generalcoredemo;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
+import android.os.AsyncTask;
 import android.view.View;
 import android.widget.TextView;
 
+import com.cloverstudio.generalcore.http.images.ImageLoader;
 import com.cloverstudio.generalcore.ui.activity.BaseNavActivity;
 import com.cloverstudio.generalcore.ui.view.NavigationBar;
 import com.cloverstudio.generalcore.utils.SystemTools;
@@ -69,12 +71,28 @@ public class MainActivity extends BaseNavActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        findViewById(R.id.btnClearImageCache).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageLoader.clearCacheFiles(MainActivity.this);
+                new MyTask().execute();
+            }
+        });
+
     }
 
     @Override
     public void initNavBar(NavigationBar navBar) {
         navBar.hideBackBtn();
         navBar.setNavTitle(getString(R.string.app_name));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //获取缓存文件夹的大小
+        new MyTask().execute();
+
     }
 
     /**
@@ -96,5 +114,23 @@ public class MainActivity extends BaseNavActivity {
 
             }
         });
+    }
+
+    /**
+     * 用于获取文件大小的异步任务
+     */
+    class MyTask extends AsyncTask<Void, Void, String> {
+
+        @Override
+        protected String doInBackground(Void... params) {
+            String size = ImageLoader.getCacheFileSize(MainActivity.this);
+            return size;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            TextView cacheFolderSize = (TextView) findViewById(R.id.cacheFolderSize);
+            cacheFolderSize.setText("已缓存文件:" + s);
+        }
     }
 }

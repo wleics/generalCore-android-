@@ -174,6 +174,45 @@ public class ImageLoader {
         if (context != null)
             Picasso.with(context).cancelTag(context);
     }
-    // TODO: 2017/3/1 添加用户获取缓存文件夹大小的方法
-    // TODO: 2017/3/1 添加用于图片清理缓存文件的方法
+
+    /**
+     * 获取存放缓存文件的文件夹的大小
+     *
+     * @param context
+     * @return
+     */
+    public static String getCacheFileSize(Context context) {
+        String result = null;
+        if (context == null) {
+            return result;
+        }
+        try {
+            //获取缓存文件夹的路径
+            File cacheDir = StorageUtils.getOwnCacheDirectory(
+                    context,
+                    AppFileSystem.getAppRootDirName() + "/caches"
+            );
+            result = AppFileSystem.getFolderSizeBy(context, cacheDir.getAbsolutePath());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
+     * 清理图片缓存
+     *
+     * @param context
+     */
+    public static void clearCacheFiles(Context context) {
+        if (context == null)
+            return;
+        try {
+            AppFileSystem.clearFileSystemCaches();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // TODO: 2017/3/2 调整使用Fresco时，缓存文件的存放位置
 }

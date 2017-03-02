@@ -102,7 +102,7 @@ public class AppFileSystem {
         try {
             // 清空导出文件夹中的内容
             String sdCardPath = FileTools.getExternalStorageDirectory()
-                    + context.getString(R.string.app_name) + File.separator;
+                    + appRootDirName + File.separator;
             FileTools.delAllFile(sdCardPath);
         } catch (Exception e) {
             e.printStackTrace();
@@ -220,12 +220,39 @@ public class AppFileSystem {
         if (!isInit) {
             throw new Exception("AppFileSystem未初始化!");
         }
+        if (context == null) {
+            throw new Exception("context为null");
+        }
         long cacheSize = getFolderSize(new File(ROOT_DIR_PATH));
         if (Environment.getExternalStorageState().equals(
                 Environment.MEDIA_MOUNTED)) {
             cacheSize += getFolderSize(context.getExternalCacheDir());
         }
         return getFormatSize(cacheSize);
+    }
+
+    /**
+     * 获取制定路径下的文件目录的大小
+     * @param context 上下文
+     * @param folderPath 文件目录地址
+     * @return
+     * @throws Exception
+     */
+    public static String getFolderSizeBy(Context context, String folderPath) throws Exception {
+        String result = null;
+        if (context == null) {
+            throw new Exception("context为null");
+        }
+        if (folderPath == null || folderPath.equals("")) {
+            throw new Exception("folderPath不能为null或空");
+        }
+        long cacheSize = getFolderSize(new File(folderPath));
+        if (Environment.getExternalStorageState().equals(
+                Environment.MEDIA_MOUNTED)) {
+            cacheSize += getFolderSize(context.getExternalCacheDir());
+        }
+        result = getFormatSize(cacheSize);
+        return result;
     }
 
     /**
