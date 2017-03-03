@@ -214,5 +214,4 @@ public class ImageLoader {
         }
     }
 
-    // TODO: 2017/3/2 调整使用Fresco时，缓存文件的存放位置
 }
