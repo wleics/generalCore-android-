@@ -18,11 +18,14 @@ allprojects {
 ```
 dependencies {
     .....
-    compile 'com.github.wleics:generalCore-android-:v1.0'
+    compile 'com.github.wleics:generalCore-android-:v1.1'
 }
 ```
 
-##1.0版本提供的内容有
+##1.1版本提供的内容
+在1.0版本的基础上封装了Picasso图像缓存库，使用方式依旧是通过ImageLoader使用。
+
+##1.0版本提供的内容
 1. 网络图片加载(ImageLoader)
 2. 网络gif图片加载(GifLoader)
 3. 统一的http请求封装(HttpOperateHelper)
